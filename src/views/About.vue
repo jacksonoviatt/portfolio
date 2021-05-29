@@ -1,5 +1,20 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <nav-bar></nav-bar>
+    <name-title></name-title>
   </div>
 </template>
+
+<script>
+import NameTitle from "../components/NameTitle.vue";
+
+import NavBar from "../components/NavBar.vue";
+export default {
+  name: "About",
+  components: {
+    NavBar,
+    NameTitle,
+  },
+};
+</script>
+    
