@@ -35,7 +35,7 @@ export default {
 }
 @media screen and (min-width: 600px) {
   nav {
-    width: 50%;
+    width: 100%;
     padding: 0 3vw;
     height: 140px;
   }
@@ -63,11 +63,10 @@ nav {
 a {
   font-size: 18px;
   font-weight: bold;
-  color: #637246;
+  color: #93B5C6;
   &.router-link-exact-active {
-    color: #D5515E;
+    color: #faa6b2;
   }
-  
 }
 
 </style>

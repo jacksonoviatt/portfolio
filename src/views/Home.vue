@@ -10,30 +10,31 @@
       <h4 id="joyful">Joyful deameanor</h4>
       <h4 id="eager">Eager to learn more</h4>
       <h4 id="aesthetic">Aesthetically inclined</h4>
-      
     </div>
     <h4></h4>
     <h4 id="keyword"></h4>
-    <falling-flowers></falling-flowers>
+<page-footer></page-footer>
   </div>
 </template>
 
 <script>
-import FallingFlowers from '../components/FallingFlowers.vue';
+
+
 import NameTitle from "../components/NameTitle.vue";
 import NavBar from "../components/NavBar.vue";
+import PageFooter from '../components/PageFooter.vue';
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  components: { NavBar, NameTitle, FallingFlowers },
+  components: { NavBar, NameTitle, PageFooter},
   name: "Home",
   mounted() {
     this.rolling();
   },
   methods: {
     fullStack: function () {
-      document.getElementById("fullstack").style.left = "130px";
+      document.getElementById("fullstack").style.left = "60px";
     },
     meticulous: function () {
       document.getElementById("meticulous").style.opacity = "1";
@@ -59,43 +60,87 @@ export default {
 };
 </script>
 <style scoped>
-name-title {
-  position: absolute;
-  top: 900px;
-}
 img {
-  height: 400px;
-  border: solid #91A666dd 3px;
-  box-shadow: 1px 1px 2px #50808E, -1px -1px 2px #50808E;
+  border: solid #91A666 3px;
+  /* width: 70vw; */
   position: absolute;
-  top: 250px;
-  right: 160px;
+
+  /* right: 10vw; */
+}
+
+@media screen and (max-width: 760px) {
+  img {
+    width: 70vw;
+    top: 530px;
+    margin: 40px 15vw;
+    
+  }
 }
 #fullstack {
-  position: absolute;
-  top: 220px;
-  left: -600px;
   transition: all 0.5s ease-in;
-}
-h2 {
-  color: #91A666;
-  /* font-weight: normal; */
-  font-size: 40px;
-  
+  position: absolute;
+  /* top: 2; */
+  margin-top: 50px;
+  left: -600px;
 }
 h4 {
   opacity: 0;
   transition: all 0.5s;
-  margin-left: 60px;
-  font-size: 30px;
+  font-size: 18px;
   font-weight: normal;
-  margin: 30px 0;
+  margin: 20px 0;
   margin-left: 50px;
 }
+h2 {
+  font-size: 20px;
+  color: #91a666;
+}
 .line {
-    width: 560px;
   height: 3px;
   margin-bottom: 40px;
-  background: #FAA6B2 ;
+  background: #faa6b2;
+  width: 250px;
+}
+
+@media screen and (min-width: 760px) {
+  img {
+    height: 300px;
+
+    position: absolute;
+    top: 280px;
+    right: 50px;
+  }
+
+  h2 {
+    font-size: 34px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  img {
+    top: 250px;
+    right: 100px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  .line {
+    width: 560px;
+  }
+
+  h4 {
+    margin-left: 60px;
+    font-size: 30px;
+    margin: 30px 0;
+    margin-left: 50px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  img {
+    right: 160px;
+  }
 }
 </style>

@@ -1,48 +1,54 @@
 <template>
   <div class="projectDiv">
     <h3 @click="check">{{ name }}</h3>
-    <img class="projectImg" :src="imageSrc" :alt="imgAlt">
+    <img class="projectImg" :src="imageSrc" :alt="imgAlt" />
     <div class="links">
       <a :href="liveLink">Go to site</a> |
       <a :href="codeLink">View code</a>
     </div>
     <div class="line"></div>
-    <p>{{description}}</p>
+    <div class="langDes">
+      <p>{{ languages }}</p>
+      <p>{{ description }}</p>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            imgAlt: `a screen grab from ${this.name}`,
-            imageSrc: this.image
-        }
+  data() {
+    return {
+      imgAlt: `a screen grab from ${this.name}`,
+      imageSrc: this.image,
+    };
+  },
+  methods: {
+    check() {
+      console.log(this.image);
     },
-    methods: {
-        check() {
-            console.log(this.image);
-        }
-    },
+  },
   props: {
     name: String,
     languages: String,
     description: String,
     codeLink: String,
     liveLink: String,
-    image: String
+    image: String,
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.langDes {
+  height: 200px;
+}
 h3 {
-    padding-top: 15px;
+  padding-top: 15px;
 }
 .projectDiv {
   width: 300px;
-  height: 480px;
-  border: 2px solid #5b5f97;
+  height: 560px;
+  border: 2px solid #91a666;
   display: grid;
   place-items: center;
 }
@@ -51,19 +57,26 @@ h3 {
   min-height: 136.83px;
   margin: 10%;
   margin-bottom: 15%;
-  box-shadow: #5b5f97 2px 2px 2px;
+  box-shadow: #93b5c6 2px 2px 2px;
+}
+.links {
+  a {
+    color: #faa6b2;
+    font-weight: bold;
+  }
 }
 .line {
-    width: 100%;
-    height: 1px;
-    margin: 30px 0;
-    background: #5b5f97;
+  width: 100%;
+  height: 1px;
+  margin: 30px 0;
+  background: #91a666;
 }
 p {
-    font-size: 14px;
-    height: 150px;
-    padding: 5px;
-    padding-top: 0;
-    text-align: center;
+  font-size: 14px;
+  // height: 150px;
+  padding: 15px;
+  padding-top: 0;
+  text-align: center;
 }
+
 </style>
